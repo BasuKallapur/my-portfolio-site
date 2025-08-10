@@ -1,5 +1,4 @@
-import React from 'react';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -51,7 +50,7 @@ const Experience = () => {
     grade?: string;
   };
 
-  const TimelineItem = ({ item, isLast = false, dotColorClass }: { item: ExperienceItem; isLast?: boolean; dotColorClass?: string }) => (
+  const TimelineItem = ({ item, dotColorClass }: { item: ExperienceItem; dotColorClass?: string }) => (
     <div className="relative flex items-start space-x-4">
       {/* Timeline Line */}
       <div className="flex flex-col items-center">
@@ -152,7 +151,6 @@ const Experience = () => {
             <TimelineItem
               key={index}
               item={item}
-              isLast={index === allItems.length - 1}
               dotColorClass={dotColors[index % dotColors.length]}
             />
           ))}

@@ -1,6 +1,13 @@
 import React from 'react';
 import { Code, Brain, Database, Cloud, Wrench, Users, ExternalLink } from 'lucide-react';
 
+type Achievement = {
+  title: string;
+  description: string;
+  icon: string;
+  link?: string;
+};
+
 const Skills = () => {
   const skillCategories = [
     {
@@ -41,7 +48,7 @@ const Skills = () => {
     }
   ];
 
-  const achievements = [
+  const achievements: Achievement[] = [
     {
       title: "1st Place - Gen AI Hackathon",
       description: "Led team to victory in BMSCE ACM Student Chapter & HiDevs hackathon",
@@ -125,7 +132,7 @@ const Skills = () => {
             Achievements & Certifications
           </h3>
           <div className="grid lg:grid-cols-2 gap-6">
-            {achievements.map((achievement: any, index: number) => (
+            {achievements.map((achievement: Achievement, index: number) => (
               <div
                 key={index}
                 className="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"

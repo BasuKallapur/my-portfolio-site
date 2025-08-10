@@ -5,15 +5,9 @@ const Experience = () => {
     {
       title: "Gen AI Developer Intern",
       company: "HiDevs",
-      location: "Remote",
+      location: "San Francisco, California, United States (Remote)",
       duration: "Dec 2024 - Feb 2025",
-      type: "Internship",
-      achievements: [
-        "Engineered a LinkedIn Post Generator using Python, Streamlit, LangChain, Groq API, and LinkedIn API enabling users to generate and publish personalized posts 3x faster",
-        "Automated the retrieval of LinkedIn profile data using Python and the REST API, streamlining manual research processes with structured JSON output",
-        "Contributed to 10+ GenAI project listings on the HiDevs platform, improving learner outcomes and platform engagement"
-      ],
-      technologies: ["Python", "Streamlit", "LangChain", "Groq API", "LinkedIn API", "REST API"]
+      type: "Internship"
     }
   ];
 
@@ -22,6 +16,7 @@ const Experience = () => {
       degree: "Bachelor of Engineering",
       field: "Electronics and Communication",
       institution: "B.M.S College of Engineering, Bengaluru",
+      location: "Bengaluru, Karnataka",
       duration: "2022 - Aug 2026",
       grade: "CGPA: 7.9",
       type: "education"
@@ -30,6 +25,7 @@ const Experience = () => {
       degree: "Pre-University Course (Class XII)",
       field: "Science",
       institution: "KLE Prerana, Hubli",
+      location: "Hubli, Karnataka",
       duration: "2020 - 2021",
       // grade removed as requested
       type: "education"
@@ -65,9 +61,17 @@ const Experience = () => {
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
               {item.title || item.degree}
             </h3>
-            <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
-              <Calendar size={14} className="mr-1" />
-              {item.duration}
+            <div className="flex flex-col items-end text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
+              <div className="flex items-center">
+                <Calendar size={14} className="mr-1" />
+                {item.duration}
+              </div>
+              {item.location && (
+                <div className="flex items-center mt-1">
+                  <MapPin size={14} className="mr-1" />
+                  {item.location}
+                </div>
+              )}
             </div>
           </div>
 
@@ -76,12 +80,6 @@ const Experience = () => {
               {item.company || item.institution}
               {item.field && <span className="text-gray-600 dark:text-gray-300"> - {item.field}</span>}
             </div>
-            {item.location && (
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
-                <MapPin size={14} className="mr-1" />
-                {item.location}
-              </div>
-            )}
           </div>
 
           {item.grade && (

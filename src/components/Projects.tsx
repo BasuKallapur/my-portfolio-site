@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { ExternalLink, Github, Calendar, Zap, Shield, Cpu, PenSquare } from 'lucide-react';
+import { PlayCircle, Github, Calendar, Zap, Shield, Cpu, PenSquare } from 'lucide-react';
 
 type Project = {
   title: string;
@@ -120,7 +120,7 @@ const Projects = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -193,9 +193,10 @@ const Projects = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => e.stopPropagation()}
+                      aria-label="Watch video demo"
                     >
-                      <ExternalLink size={16} className="mr-2" />
-                      Live Demo
+                      <PlayCircle size={16} className="mr-2" />
+                      Video Demo
                     </motion.a>
                   )}
                   {project.githubLink && (
@@ -335,9 +336,10 @@ const Projects = () => {
                         className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        aria-label="Watch video demo"
                       >
-                        <ExternalLink size={18} className="mr-2" />
-                        View Live Demo
+                        <PlayCircle size={18} className="mr-2" />
+                        Watch Video
                       </motion.a>
                     )}
                     {selectedProject.githubLink && (

@@ -40,7 +40,7 @@ const Header = () => {
               href="https://github.com/BasuKallapur"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               <Github size={20} />
             </a>
@@ -54,7 +54,7 @@ const Header = () => {
             </a>
             <a
               href="mailto:basukallapur00@gmail.com"
-              className="text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               <Mail size={20} />
             </a>
@@ -89,7 +89,7 @@ const Header = () => {
                 href="https://github.com/BasuKallapur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <Github size={20} />
               </a>
@@ -103,7 +103,7 @@ const Header = () => {
               </a>
               <a
                 href="mailto:basukallapur00@gmail.com"
-                className="text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <Mail size={20} />
               </a>

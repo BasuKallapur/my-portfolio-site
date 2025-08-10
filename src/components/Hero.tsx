@@ -154,7 +154,7 @@ const Hero = () => {
                 className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1"
               >
                 <img
-                  src="/public/imageOfMe.jpeg"
+                  src="/profile-latest.jpeg"
                   alt="Basavaraj Kallapur"
                   className="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl"
                 />

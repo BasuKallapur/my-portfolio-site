@@ -32,7 +32,7 @@ const Experience = () => {
       field: "Science",
       institution: "KLE Prerana, Hubli",
       duration: "2020 - 2021",
-      grade: "Percentage: 99.83%",
+      // grade removed as requested
       type: "education"
     }
   ];
@@ -51,12 +51,12 @@ const Experience = () => {
     grade?: string;
   };
 
-  const TimelineItem = ({ item, isLast = false }: { item: ExperienceItem; isLast?: boolean }) => (
+  const TimelineItem = ({ item, isLast = false, dotColorClass }: { item: ExperienceItem; isLast?: boolean; dotColorClass?: string }) => (
     <div className="relative flex items-start space-x-4">
       {/* Timeline Line */}
       <div className="flex flex-col items-center">
-        <div className={`w-4 h-4 rounded-full ${item.type === 'education' ? 'bg-green-500' : 'bg-blue-500'} border-4 border-white dark:border-gray-900 shadow-lg`}></div>
-        {!isLast && <div className="w-0.5 h-16 bg-gray-300 dark:bg-gray-700 mt-2"></div>}
+        <div className={`w-4 h-4 rounded-full ${dotColorClass || (item.type === 'education' ? 'bg-green-500' : 'bg-blue-500')} border-4 border-white dark:border-gray-900 shadow-lg`}></div>
+        <div className="w-0.5 h-16 bg-gray-300 dark:bg-gray-700 mt-2"></div>
       </div>
 
       {/* Content */}
@@ -134,6 +134,9 @@ const Experience = () => {
     return yearB - yearA;
   });
 
+  // Assign a distinct dot color per item (first three unique, then repeat if needed)
+  const dotColors = ['bg-blue-500', 'bg-green-500', 'bg-purple-500'];
+
   return (
     <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -150,6 +153,7 @@ const Experience = () => {
               key={index}
               item={item}
               isLast={index === allItems.length - 1}
+              dotColorClass={dotColors[index % dotColors.length]}
             />
           ))}
         </div>

@@ -67,7 +67,7 @@ const Hero = () => {
               </motion.span>
             </motion.h1>
             <motion.h2
-              className="text-2xl lg:text-3xl mb-6 font-medium bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 bg-clip-text text-transparent dark:from-gray-200 dark:via-gray-300 dark:to-gray-200"
+              className="text-2xl lg:text-3xl mb-6 font-medium bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent dark:from-blue-400 dark:via-purple-400 dark:to-blue-500"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}

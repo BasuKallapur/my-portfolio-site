@@ -14,10 +14,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-gray-900">
+          <div className="text-2xl font-bold text-gray-900 dark:text-white">
             Basavaraj Kallapur
           </div>
 
@@ -27,7 +27,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -40,7 +40,7 @@ const Header = () => {
               href="https://github.com/BasuKallapur"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               <Github size={20} />
             </a>
@@ -48,13 +48,13 @@ const Header = () => {
               href="https://linkedin.com/in/basavarajkallapur"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               <Linkedin size={20} />
             </a>
             <a
               href="mailto:basukallapur00@gmail.com"
-              className="text-gray-600 hover:text-red-600 transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors"
             >
               <Mail size={20} />
             </a>
@@ -71,25 +71,25 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                  className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
             </nav>
-            <div className="flex items-center space-x-4 mt-4 pt-4 border-t border-gray-200">
+            <div className="flex items-center space-x-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
               <a
                 href="https://github.com/BasuKallapur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 <Github size={20} />
               </a>
@@ -97,13 +97,13 @@ const Header = () => {
                 href="https://linkedin.com/in/basavarajkallapur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="mailto:basukallapur00@gmail.com"
-                className="text-gray-600 hover:text-red-600 transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-red-600 transition-colors"
               >
                 <Mail size={20} />
               </a>

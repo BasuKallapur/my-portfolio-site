@@ -3,10 +3,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { ExternalLink, Github, Calendar, Zap, Shield, Cpu, PenSquare } from 'lucide-react';
 
-const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+type Project = {
+  title: string;
+  date?: string;
+  description: string;
+  fullDescription: string;
+  technologies: string[];
+  achievements: string[];
+  challenges?: string[];
+  impact?: string;
+  icon: JSX.Element;
+  color: string;
+  githubLink?: string;
+  liveLink?: string;
+};
 
-  const projects = [
+const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const projects: Project[] = [
     {
       title: "Multi Source Content Intelligent System",
       date: "Feb 2025",
@@ -76,7 +91,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -86,7 +101,7 @@ const Projects = () => {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-4xl font-bold text-gray-900 mb-4"
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -95,7 +110,7 @@ const Projects = () => {
             Featured Projects
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -109,7 +124,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 cursor-pointer"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -126,28 +141,28 @@ const Projects = () => {
                   <div className={`p-3 rounded-lg bg-gradient-to-r ${project.color} text-white`}>
                     {project.icon}
                   </div>
-                  <div className="flex items-center text-sm text-gray-500">
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                     <Calendar size={14} className="mr-1" />
                     {project.date}
                   </div>
                 </div>
 
                 {/* Title and Description */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Achievements */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Achievements:</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Achievements:</h4>
                   <ul className="space-y-1">
                     {project.achievements.map((achievement, achievementIndex) => (
                       <li key={achievementIndex} className="flex items-start">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-2 flex-shrink-0"></div>
-                        <span className="text-sm text-gray-600">{achievement}</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-300">{achievement}</span>
                       </li>
                     ))}
                   </ul>
@@ -156,10 +171,10 @@ const Projects = () => {
                 {/* Technologies */}
                 <div className="mb-6">
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
+                    {project.technologies.map((tech: string, techIndex: number) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-md"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-xs font-medium rounded-md"
                       >
                         {tech}
                       </span>
@@ -188,7 +203,7 @@ const Projects = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`${project.liveLink ? 'flex-1' : 'w-full'} inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200`}
+                      className={`${project.liveLink ? 'flex-1' : 'w-full'} inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-sm font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => e.stopPropagation()}
@@ -214,7 +229,7 @@ const Projects = () => {
               onClick={() => setSelectedProject(null)}
             >
               <motion.div
-                className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
@@ -228,7 +243,7 @@ const Projects = () => {
                   {/* Close Button */}
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="absolute top-6 right-6 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors duration-200"
+                    className="absolute top-6 right-6 w-8 h-8 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200"
                   >
                     ×
                   </button>
@@ -239,10 +254,10 @@ const Projects = () => {
                       {selectedProject.icon}
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                         {selectedProject.title}
                       </h3>
-                      <div className="flex items-center text-gray-500">
+                      <div className="flex items-center text-gray-500 dark:text-gray-400">
                         <Calendar size={16} className="mr-2" />
                         {selectedProject.date}
                       </div>
@@ -251,20 +266,20 @@ const Projects = () => {
 
                   {/* Full Description */}
                   <div className="mb-8">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Project Overview</h4>
-                    <p className="text-gray-700 leading-relaxed text-lg">
+                    <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Project Overview</h4>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                       {selectedProject.fullDescription}
                     </p>
                   </div>
 
                   {/* Technologies */}
                   <div className="mb-8">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Technologies Used</h4>
+                    <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Technologies Used</h4>
                     <div className="flex flex-wrap gap-3">
                       {selectedProject.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-4 py-2 bg-gray-100 text-gray-800 font-medium rounded-lg"
+                          className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium rounded-lg"
                         >
                           {tech}
                         </span>
@@ -274,12 +289,12 @@ const Projects = () => {
 
                   {/* Achievements */}
                   <div className="mb-8">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Achievements</h4>
+                    <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Achievements</h4>
                     <div className="grid md:grid-cols-2 gap-3">
                       {selectedProject.achievements.map((achievement, index) => (
                         <div key={index} className="flex items-start">
                           <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-gray-700">{achievement}</span>
+                          <span className="text-gray-700 dark:text-gray-300">{achievement}</span>
                         </div>
                       ))}
                     </div>
@@ -288,12 +303,12 @@ const Projects = () => {
                   {/* Challenges */}
                   {selectedProject.challenges && (
                     <div className="mb-8">
-                      <h4 className="text-xl font-semibold text-gray-900 mb-4">Technical Challenges</h4>
+                      <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Technical Challenges</h4>
                       <div className="grid md:grid-cols-2 gap-3">
                         {selectedProject.challenges.map((challenge, index) => (
                           <div key={index} className="flex items-start">
                             <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <span className="text-gray-700">{challenge}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{challenge}</span>
                           </div>
                         ))}
                       </div>
@@ -303,8 +318,8 @@ const Projects = () => {
                   {/* Impact */}
                   {selectedProject.impact && (
                     <div className="mb-8">
-                      <h4 className="text-xl font-semibold text-gray-900 mb-4">Impact & Results</h4>
-                      <p className="text-gray-700 leading-relaxed bg-blue-50 p-4 rounded-lg">
+                      <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Impact & Results</h4>
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
                         {selectedProject.impact}
                       </p>
                     </div>
@@ -330,7 +345,7 @@ const Projects = () => {
                         href={selectedProject.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                        className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >

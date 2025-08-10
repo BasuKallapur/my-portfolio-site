@@ -70,11 +70,11 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Achievements</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Achievements</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A comprehensive overview of my technical expertise and notable accomplishments
           </p>
         </div>
@@ -84,13 +84,13 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center mb-4">
                 <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-white mr-4`}>
                   {category.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {category.title}
                 </h3>
               </div>
@@ -98,7 +98,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full hover:bg-gray-200 transition-colors duration-200"
+                    className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-sm font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
                   >
                     {skill}
                   </span>
@@ -110,22 +110,22 @@ const Skills = () => {
 
         {/* Achievements Section */}
         <div>
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
             Achievements & Certifications
           </h3>
           <div className="grid lg:grid-cols-2 gap-6">
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="flex items-start space-x-4">
                   <div className="text-3xl">{achievement.icon}</div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                       {achievement.title}
                     </h4>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {achievement.description}
                     </p>
                   </div>

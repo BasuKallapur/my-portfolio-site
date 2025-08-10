@@ -62,11 +62,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
           </p>
         </div>
@@ -81,20 +81,20 @@ const Contact = () => {
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-center space-x-4">
-                  <div className="p-3 bg-blue-100 text-blue-600 rounded-lg">
+                  <div className="p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
                     {info.icon}
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-gray-900">{info.title}</h4>
+                    <h4 className="text-lg font-medium text-gray-900 dark:text-white">{info.title}</h4>
                     {info.link ? (
                       <a
                         href={info.link}
-                        className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-gray-600">{info.value}</p>
+                      <p className="text-gray-600 dark:text-gray-300">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -103,7 +103,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-medium text-gray-900 mb-4">Follow Me</h4>
+              <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -111,7 +111,7 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-gray-100 text-gray-600 rounded-lg transition-colors duration-200 ${social.color} hover:bg-gray-200`}
+                    className={`p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-lg transition-colors duration-200 ${social.color} hover:bg-gray-200 dark:hover:bg-gray-700`}
                   >
                     {social.icon}
                   </a>
@@ -120,7 +120,7 @@ const Contact = () => {
             </div>
 
             {/* Call to Action */}
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl">
               <h4 className="text-lg font-semibold text-gray-900 mb-2">
                 Ready to collaborate?
               </h4>
@@ -153,7 +153,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                     placeholder="Your Name"
                   />
                 </div>
@@ -168,7 +168,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                   placeholder="What's this about?"
                 />
               </div>
@@ -201,7 +201,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
                   placeholder="Tell me about your project or just say hello!"
                 />
               </div>

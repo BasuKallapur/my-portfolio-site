@@ -4,7 +4,7 @@ import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -48,7 +48,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-gray-900">Hi, I'm </span>
+              <span className="text-gray-900 dark:text-white">Hi, I'm </span>
               <motion.span
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent bg-300% animate-gradient"
                 animate={{
@@ -67,7 +67,7 @@ const Hero = () => {
               </motion.span>
             </motion.h1>
             <motion.h2
-              className="text-2xl lg:text-3xl mb-6 font-medium bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 bg-clip-text text-transparent"
+              className="text-2xl lg:text-3xl mb-6 font-medium bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 bg-clip-text text-transparent dark:from-gray-200 dark:via-gray-300 dark:to-gray-200"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -75,7 +75,7 @@ const Hero = () => {
               Gen AI Developer & Software Engineer
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl"
+              className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -103,7 +103,7 @@ const Hero = () => {
               </motion.a>
               <motion.a
                 href="#projects"
-                className="inline-flex items-center px-8 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { PlayCircle, Github, Calendar, Zap, Shield, Cpu, PenSquare } from 'lucide-react';

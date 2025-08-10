@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code, Brain, Database, Cloud, Wrench, Users, ExternalLink } from 'lucide-react';
 
 type Achievement = {

@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Basavaraj Kallapur</h3>
             <p className="text-gray-400 leading-relaxed">
-              Gen AI Developer & Software Engineer passionate about building intelligent systems 
+              Gen AI Developer & Software Engineer passionate about building intelligent systems
               and solving complex problems through technology.
             </p>
           </div>
@@ -62,7 +62,7 @@ const Footer = () => {
               </a>
               <div className="flex space-x-4 mt-4">
                 <a
-                  href="https://github.com/basavarajkallapur"
+                  href="https://github.com/BasuKallapur"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200"

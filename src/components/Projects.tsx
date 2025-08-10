@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { ExternalLink, Github, Calendar, Zap, Shield, Cpu } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Zap, Shield, Cpu, PenSquare } from 'lucide-react';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -11,92 +11,81 @@ const Projects = () => {
       title: "Multi Source Content Intelligent System",
       date: "Feb 2025",
       description: "Created a cross-modal analysis system for YouTube, documents and webpage using RAG architecture. Leveraged LLaMA 3 and Groq API to summarize videos, reducing manual review time by 80%.",
-      fullDescription: "This comprehensive system represents a breakthrough in cross-modal content analysis, seamlessly integrating multiple data sources including YouTube videos, PDF documents, and web pages. Built using advanced RAG (Retrieval-Augmented Generation) architecture, the system employs LLaMA 3 and Groq API to provide intelligent summarization and analysis capabilities. The implementation features a sophisticated pipeline that processes diverse content types, extracts meaningful insights, and delivers accurate responses through an intuitive Q&A interface.",
+      fullDescription: "Cross‑modal analysis system for YouTube, documents, and webpages using RAG. Groq + LLaMA 3 for video summarization; LangChain + FAISS Q&A delivering 90%+ accuracy and 80% review‑time reduction.",
       technologies: ["LLaMA 3", "Groq API", "LangChain", "FAISS", "YouTube Transcript API"],
       achievements: [
-        "Reduced manual review time by 80%",
-        "Achieved 90%+ accuracy in Q&A pipeline",
-        "Cross-modal analysis capabilities",
-        "Processed 1000+ documents efficiently",
-        "Real-time content summarization",
-        "Scalable vector database implementation"
+        "Created a cross-modal analysis system for YouTube, documents and webpage using RAG architecture",
+        "Leveraged LLaMA 3 and Groq API to summarize videos, reducing manual review time by 80%",
+        "Constructed a RAG-based Q&A pipeline with LangChain and FAISS, achieving 90%+ accuracy"
       ],
-      challenges: [
-        "Handling diverse content formats and structures",
-        "Optimizing vector embeddings for cross-modal retrieval",
-        "Ensuring consistent accuracy across different content types",
-        "Managing large-scale document processing efficiently"
-      ],
-      impact: "This system has revolutionized content analysis workflows, enabling organizations to process vast amounts of multimedia content with unprecedented speed and accuracy. The 80% reduction in manual review time translates to significant cost savings and improved productivity.",
       icon: <Zap className="w-6 h-6" />,
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      githubLink: "https://github.com/BasuKallapur/MultiSourceContentSystem",
+      liveLink: "https://www.youtube.com/watch?v=IvUpg4D1PuY"
     },
     {
       title: "Credit Card Fraud Detection System",
       date: "May 2025",
       description: "Designed a machine learning system comparing four models (Random Forest, Logistic Regression, Decision Tree, SGD). Developed and hosted a Streamlit dashboard on Render with real-time prediction capabilities.",
-      fullDescription: "A comprehensive fraud detection system that leverages advanced machine learning algorithms to identify potentially fraudulent credit card transactions in real-time. The system implements and compares four different ML models to ensure optimal performance, featuring an intuitive Streamlit dashboard that provides instant predictions and detailed analytics. The solution includes sophisticated data preprocessing, feature engineering, and model optimization techniques.",
+      fullDescription: "Machine‑learning system for credit card fraud detection with model comparison and a Streamlit dashboard hosted on Render for real‑time prediction and exploration.",
       technologies: ["Python", "Scikit-learn", "Streamlit", "Plotly", "Render"],
       achievements: [
-        "99% prediction accuracy",
-        "Real-time prediction dashboard",
-        "Interactive data exploration",
-        "Feature importance analysis",
-        "Processed 284,807 transactions",
-        "Sub-second prediction response time",
-        "Comprehensive model comparison framework"
+        "Designed a machine learning system comparing four models (Random Forest, Logistic Regression, Decision Tree, SGD)",
+        "Developed and hosted a Streamlit dashboard on Render, with real-time prediction and interactive data exploration",
+        "Implemented optimized Random Forest model with feature importance analysis, achieving 99% prediction accuracy"
       ],
-      challenges: [
-        "Handling highly imbalanced dataset (0.17% fraud cases)",
-        "Optimizing model performance for real-time predictions",
-        "Implementing robust feature engineering pipeline",
-        "Ensuring model interpretability for business stakeholders"
-      ],
-      impact: "The system provides financial institutions with a powerful tool to combat fraud, potentially saving millions in fraudulent transactions while maintaining excellent user experience through minimal false positives.",
       icon: <Shield className="w-6 h-6" />,
       color: "from-green-500 to-teal-500",
-      liveLink: "#",
-      githubLink: "#"
+      githubLink: "https://github.com/BasuKallapur/credit-card-risk-analysis",
+      liveLink: "https://drive.google.com/file/d/1lZ4IcC6M86f20kwWBCAvDLqeP0-Wv0Xa/view"
     },
     {
       title: "ESP32 Power Theft Detection System",
       date: "Aug 2024",
       description: "Devised an embedded IoT system to combat electricity theft by detecting anomalies in current between input and load lines. Implemented real-time alerts and remote power control capabilities.",
-      fullDescription: "An innovative IoT-based solution designed to address the critical issue of electricity theft in power distribution systems. The system utilizes ESP32 microcontrollers and precision current sensors to monitor power consumption patterns and detect anomalies that indicate potential theft. Features include real-time monitoring, automated alert systems, and remote control capabilities through a comprehensive web dashboard.",
+      fullDescription: "Embedded IoT solution with ESP32 and ACS712 sensors, Firebase dashboard for alerts and remote control to detect and curb power theft.",
       technologies: ["ESP32", "ACS712", "Firebase", "HTML/CSS", "PlatformIO"],
       achievements: [
-        "Over 90% theft detection accuracy",
-        "Real-time alerts and monitoring",
-        "Reduced manual inspection by 70%",
-        "Remote power control system",
-        "24/7 automated monitoring",
-        "Cloud-based data analytics",
-        "Mobile-responsive dashboard"
+        "Devised an embedded IoT system to combat electricity theft by detecting anomalies in current between input and load lines",
+        "Implemented an IoT system with ACS712 sensors and Firebase dashboard for real-time alerts and remote power control",
+        "Achieved over 90% theft detection accuracy, allowing automated alerts and reducing manual inspection efforts by 70%"
       ],
-      challenges: [
-        "Ensuring accurate current measurement in varying conditions",
-        "Implementing reliable wireless communication",
-        "Designing tamper-proof hardware installation",
-        "Optimizing power consumption for continuous operation"
-      ],
-      impact: "This system addresses a significant challenge in power distribution, helping utility companies reduce revenue losses from theft while improving overall grid efficiency and reliability.",
       icon: <Cpu className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
-      githubLink: "#"
+      githubLink: "https://github.com/BasuKallapur/Power-theft-detection-project",
+      liveLink: "https://drive.google.com/drive/u/2/folders/1ssZexdgxhFqKzHugFqWw-XPR635nFloX"
+    },
+    {
+      title: "LinkedIn Post Generator",
+      date: "",
+      description: "LinkedIn Post Generator with Image & Video Support. A Streamlit-based app that uses AI to create professional LinkedIn posts with customizable length and language options (English, Hinglish, Kannada). Users can upload images and videos, then copy or publish directly to LinkedIn.",
+      fullDescription: "AI-powered LinkedIn post generator with multi-language support and media upload; streamlined to compose, copy, and publish posts.",
+      technologies: ["Streamlit", "LangChain", "Groq API", "LinkedIn API", "Python"],
+      achievements: [
+        "AI-powered content generation using Groq LLM",
+        "Supports multi-language post creation",
+        "Media upload for images and videos",
+        "Direct LinkedIn posting integration",
+        "User-friendly interface with copy-to-clipboard functionality"
+      ],
+      icon: <PenSquare className="w-6 h-6" />,
+      color: "from-orange-500 to-rose-500",
+      githubLink: "https://github.com/BasuKallapur/post-generator",
+      liveLink: "https://drive.google.com/file/d/1Fc8M8r8xyZ7wx6GOEO11gLUBak9dVcdO/view?usp=drive_link"
     }
   ];
 
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-4xl font-bold text-gray-900 mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +94,7 @@ const Projects = () => {
           >
             Featured Projects
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +105,7 @@ const Projects = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -130,7 +119,7 @@ const Projects = () => {
             >
               {/* Project Header */}
               <div className={`h-2 bg-gradient-to-r ${project.color} rounded-t-xl`}></div>
-              
+
               <div className="p-6">
                 {/* Icon and Date */}
                 <div className="flex items-center justify-between mb-4">
@@ -234,7 +223,7 @@ const Projects = () => {
               >
                 {/* Modal Header */}
                 <div className={`h-4 bg-gradient-to-r ${selectedProject.color} rounded-t-2xl`}></div>
-                
+
                 <div className="p-8">
                   {/* Close Button */}
                   <button

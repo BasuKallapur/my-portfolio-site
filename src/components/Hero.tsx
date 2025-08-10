@@ -36,20 +36,20 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             className="text-center lg:text-left relative z-10"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <motion.h1 
+            <motion.h1
               className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="text-gray-900">Hi, I'm </span>
-              <motion.span 
+              <motion.span
                 className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent bg-300% animate-gradient"
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
@@ -66,7 +66,7 @@ const Hero = () => {
                 Basavaraj
               </motion.span>
             </motion.h1>
-            <motion.h2 
+            <motion.h2
               className="text-2xl lg:text-3xl mb-6 font-medium bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -74,19 +74,19 @@ const Hero = () => {
             >
               Gen AI Developer & Software Engineer
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Passionate about building intelligent systems with AI and machine learning. 
-              Currently pursuing B.E in Electronics and Communication at B.M.S College of Engineering, 
+              Passionate about building intelligent systems with AI and machine learning.
+              Currently pursuing B.E in Electronics and Communication at B.M.S College of Engineering,
               with hands-on experience in generative AI, full-stack development, and IoT systems.
             </motion.p>
-            
+
             {/* CTA Buttons */}
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -113,14 +113,14 @@ const Hero = () => {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div 
+            <motion.div
               className="flex justify-center lg:justify-start space-x-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
               <motion.a
-                href="https://github.com/basavarajkallapur"
+                href="https://github.com/BasuKallapur"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
@@ -143,32 +143,24 @@ const Hero = () => {
           </motion.div>
 
           {/* Profile Image */}
-          <motion.div 
+          <motion.div
             className="flex justify-center lg:justify-end relative z-10"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           >
             <div className="relative">
-              <motion.div 
+              <div
                 className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1"
-                animate={{
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
               >
                 <img
                   src="/public/imageOfMe.jpeg"
                   alt="Basavaraj Kallapur"
                   className="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl"
                 />
-              </motion.div>
+              </div>
               {/* Floating Elements */}
-              <motion.div 
+              <motion.div
                 className="absolute -top-4 -right-4 w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center shadow-lg"
                 animate={{
                   y: [0, -10, 0],
@@ -182,7 +174,7 @@ const Hero = () => {
               >
                 <span className="text-2xl">🚀</span>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="absolute -bottom-4 -left-4 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center shadow-lg"
                 animate={{
                   y: [0, 10, 0],

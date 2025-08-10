@@ -6,7 +6,10 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gray-900 text-white pt-16 pb-12">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-80" />
+      {/* Soft gradient fade separator above the footer */}
+      <div className="absolute -top-8 left-0 right-0 h-8 pointer-events-none overflow-hidden [mask-image:linear-gradient(to_bottom,black,transparent)]">
+        <div className="w-full h-full bg-gradient-to-b from-black/30 to-transparent dark:from-black/60" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand Section */}

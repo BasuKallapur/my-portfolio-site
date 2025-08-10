@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,9 +20,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can integrate with email services like EmailJS or backend API
   };
 
   const contactInfo = [
@@ -33,31 +30,10 @@ const Contact = () => {
       link: "mailto:basukallapur00@gmail.com"
     },
     {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Phone",
-      value: "+91-9901654394",
-      link: "tel:+919901654394"
-    },
-    {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
       value: "Bengaluru, Karnataka, India",
       link: null
-    }
-  ];
-
-  const socialLinks = [
-    {
-      name: "GitHub",
-      icon: <Github className="w-5 h-5" />,
-      url: "https://github.com/BasuKallapur",
-      color: "hover:text-gray-900"
-    },
-    {
-      name: "LinkedIn",
-      icon: <Linkedin className="w-5 h-5" />,
-      url: "https://linkedin.com/in/basavarajkallapur",
-      color: "hover:text-blue-600"
     }
   ];
 
@@ -99,42 +75,6 @@ const Contact = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-lg transition-colors duration-200 ${social.color} hover:bg-gray-200 dark:hover:bg-gray-700`}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl">
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                Ready to collaborate?
-              </h4>
-              <p className="text-gray-600 mb-4">
-                Whether you have a project in mind, want to discuss opportunities, or just want to say hello,
-                I'd love to hear from you!
-              </p>
-              <a
-                href="mailto:basukallapur00@gmail.com"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-              >
-                Send Email
-                <ExternalLink className="ml-2 w-4 h-4" />
-              </a>
             </div>
           </div>
 

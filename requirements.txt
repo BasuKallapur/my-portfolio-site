@@ -1,2 +1,2 @@
-# This project is a Vite + React + TypeScript app.
-# No Python dependencies are required. 
+nodejs
+npm 

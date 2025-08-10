@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="text-2xl font-bold text-gray-900 dark:text-white">
-            Basavaraj Kallapur
+            Basavaraj C Kallapur
           </div>
 
           {/* Desktop Navigation */}

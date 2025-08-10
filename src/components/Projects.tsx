@@ -72,7 +72,7 @@ const Projects = () => {
     },
     {
       title: "LinkedIn Post Generator",
-      date: "",
+      date: "Nov 2024",
       description: "LinkedIn Post Generator with Image & Video Support. A Streamlit-based app that uses AI to create professional LinkedIn posts with customizable length and language options (English, Hinglish, Kannada). Users can upload images and videos, then copy or publish directly to LinkedIn.",
       fullDescription: "AI-powered LinkedIn post generator with multi-language support and media upload; streamlined to compose, copy, and publish posts.",
       technologies: ["Streamlit", "LangChain", "Groq API", "LinkedIn API", "Python"],
@@ -124,18 +124,19 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 cursor-pointer"
-              initial={{ opacity: 0, y: 50 }}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform-gpu [will-change:transform] border border-gray-100 dark:border-gray-700 cursor-pointer h-full"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ duration: 0.35, delay: index * 0.05, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ y: -8, scale: 1.04, transition: { type: 'spring', stiffness: 260, damping: 18 } }}
+              whileTap={{ scale: 0.99 }}
               onClick={() => setSelectedProject(project)}
             >
               {/* Project Header */}
               <div className={`h-2 bg-gradient-to-r ${project.color} rounded-t-xl`}></div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col h-full">
                 {/* Icon and Date */}
                 <div className="flex items-center justify-between mb-4">
                   <div className={`p-3 rounded-lg bg-gradient-to-r ${project.color} text-white`}>
@@ -183,14 +184,14 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex space-x-3">
+                <div className="flex space-x-3 mt-auto pt-2">
                   {project.liveLink && (
                     <motion.a
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, transition: { type: 'spring', stiffness: 260, damping: 20 } }}
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => e.stopPropagation()}
                       aria-label="Watch video demo"
@@ -205,7 +206,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`${project.liveLink ? 'flex-1' : 'w-full'} inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-sm font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, transition: { type: 'spring', stiffness: 260, damping: 20 } }}
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -230,11 +231,11 @@ const Projects = () => {
               onClick={() => setSelectedProject(null)}
             >
               <motion.div
-                className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-                initial={{ scale: 0.8, opacity: 0 }}
+                className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform-gpu"
+                initial={{ scale: 0.96, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                exit={{ scale: 0.96, opacity: 0 }}
+                transition={{ type: "spring", damping: 26, stiffness: 260 }}
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal Header */}
@@ -334,9 +335,8 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, transition: { type: 'spring', stiffness: 260, damping: 20 } }}
                         whileTap={{ scale: 0.95 }}
-                        aria-label="Watch video demo"
                       >
                         <PlayCircle size={18} className="mr-2" />
                         Watch Video
@@ -348,7 +348,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, transition: { type: 'spring', stiffness: 260, damping: 20 } }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <Github size={18} className="mr-2" />

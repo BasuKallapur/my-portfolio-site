@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Brain, Database, Cloud, Wrench, Users } from 'lucide-react';
+import { Code, Brain, Database, Cloud, Wrench, Users, ExternalLink } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -16,7 +16,7 @@ const Skills = () => {
       color: "from-purple-500 to-purple-600"
     },
     {
-      title: "Tools & Methodologies",
+      title: "Development Tools",
       icon: <Wrench className="w-6 h-6" />,
       skills: ["Git", "GitHub", "REST APIs", "Postman", "CI/CD (GitHub Actions)", "Render", "Railway", "Vercel", "Streamlit Cloud"],
       color: "from-green-500 to-green-600"
@@ -45,27 +45,38 @@ const Skills = () => {
     {
       title: "1st Place - Gen AI Hackathon",
       description: "Led team to victory in BMSCE ACM Student Chapter & HiDevs hackathon",
-      icon: "🏆"
+      icon: "🏆",
+      link: "https://www.linkedin.com/posts/basavaraj-c-kallapur_generativeai-llms-hackathon-activity-7265192379882643458-oX9X?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJqIaMBzEzr5wvn-cI2phBX1pfq_rngLt0"
     },
     {
       title: "Top 15 Finalist - CIDECODE 2025",
       description: "PES University in collaboration with CID Karnataka",
-      icon: "🎯"
+      icon: "🎯",
+      link: "https://cidecode.in/hackathon-shortlisted-teams/"
     },
     {
       title: "Google Cloud Skills Boost - Gold Tier",
       description: "Completed hands-on labs in ML, Gen AI, and Cloud Fundamentals",
-      icon: "☁️"
+      icon: "☁️",
+      link: "https://www.cloudskillsboost.google/public_profiles/60f7a806-2841-4036-a6bc-c0e06a3c590b"
     },
     {
       title: "Postman API Expert",
       description: "Certified in API Fundamentals",
-      icon: "📡"
+      icon: "📡",
+      link: "https://badgr.com/public/assertions/ZZBvY0a7SNmsy9ZLUgrBoQ?identity__email=basukallapur00@gmail.com"
     },
     {
       title: "250+ DSA Problems Solved",
       description: "Enhanced algorithmic thinking on LeetCode and GFG",
-      icon: "💻"
+      icon: "💻",
+      link: "https://codolio.com/profile/Basavaraj%20Kallapur"
+    },
+    {
+      title: "Gen AI Study Jams 2024 - Completion",
+      description: "Successfully completed the Gen AI Study Jams 2024 conducted by GDSC BMSCE",
+      icon: "🤖",
+      link: "https://www.linkedin.com/posts/basavaraj-c-kallapur_gdsc-genai-machinelearning-activity-7214843251609018369-GVs-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJqIaMBzEzr5wvn-cI2phBX1pfq_rngLt0"
     }
   ];
 
@@ -73,7 +84,7 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Achievements</h2>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A comprehensive overview of my technical expertise and notable accomplishments
           </p>
@@ -114,11 +125,22 @@ const Skills = () => {
             Achievements & Certifications
           </h3>
           <div className="grid lg:grid-cols-2 gap-6">
-            {achievements.map((achievement, index) => (
+            {achievements.map((achievement: any, index: number) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
+                {achievement.link && (
+                  <a
+                    href={achievement.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 inline-flex items-center justify-center w-8 h-8 rounded-md text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/70 dark:hover:bg-gray-700/60 transition-colors duration-200"
+                    aria-label={`Open proof for ${achievement.title}`}
+                  >
+                    <ExternalLink size={16} />
+                  </a>
+                )}
                 <div className="flex items-start space-x-4">
                   <div className="text-3xl">{achievement.icon}</div>
                   <div className="flex-1">

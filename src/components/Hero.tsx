@@ -123,7 +123,7 @@ const Hero = () => {
                 href="https://github.com/BasuKallapur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -155,7 +155,7 @@ const Hero = () => {
               >
                 <img
                   src="/profile-latest.jpeg"
-                  alt="Basavaraj Kallapur"
+                  alt="Basavaraj C Kallapur"
                   className="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl"
                 />
               </div>

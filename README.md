@@ -99,4 +99,4 @@ No server-side code is required. The contact form currently logs to the console 
 - Keep color contrast sufficient in both light and dark modes.
 
 ## License
-All rights reserved by the project owner unless stated otherwise. 
+This project is licensed under the [MIT License](LICENSE).

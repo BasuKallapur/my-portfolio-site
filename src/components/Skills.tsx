@@ -73,7 +73,7 @@ const Skills = () => {
       link: "https://badgr.com/public/assertions/ZZBvY0a7SNmsy9ZLUgrBoQ?identity__email=basukallapur00@gmail.com"
     },
     {
-      title: "250+ DSA Problems Solved",
+      title: "300+ DSA Problems Solved",
       description: "Enhanced algorithmic thinking on LeetCode and GFG",
       icon: "💻",
       link: "https://codolio.com/profile/Basavaraj%20Kallapur"
